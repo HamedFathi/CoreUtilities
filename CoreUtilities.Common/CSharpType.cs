@@ -1,0 +1,54 @@
+﻿using System.ComponentModel;
+
+namespace CoreUtilities
+{
+    public enum CSharpType
+    {
+        [Description("bool")]
+        Bool,
+        [Description("byte")]
+        Byte,
+        [Description("sbyte")]
+        SByte,
+        [Description("char")]
+        Char,
+        [Description("decimal")]
+        Decimal,
+        [Description("double")]
+        Double,
+        [Description("float")]
+        Float,
+        [Description("int")]
+        Int,
+        [Description("uint")]
+        UInt,
+        [Description("long")]
+        Long,
+        [Description("ulong")]
+        ULong,
+        [Description("object")]
+        Object,
+        [Description("short")]
+        Short,
+        [Description("ushort")]
+        UShort,
+        [Description("string")]
+        String,
+        [Description("Microsoft.SqlServer.Types.SqlGeography")]
+        SqlGeography,
+        [Description("Microsoft.SqlServer.Types.SqlGeometry")]
+        SqlGeometry,
+        [Description("Microsoft.SqlServer.Types.SqlHierarchyId")]
+        SqlHierarchyId,
+        [Description("byte[]")]
+        BytesArray,
+        [Description("DateTime")]
+        DateTime,
+        [Description("DateTimeOffset")]
+        DateTimeOffset,
+        [Description("TimeSpan")]
+        TimeSpan,
+        [Description("Guid")]
+        Guid
+    }
+}
