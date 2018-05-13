@@ -27,13 +27,13 @@ namespace CoreUtilities
         T Get<T>(string key);
 
         /// <summary>
-        /// Get the object that its key is given
+        /// Get the object that its key is given or set a new object if the key does not exist
         /// </summary>
         /// <typeparam name="T">The object</typeparam>
         /// <param name="key">The given key to check</param>
-        /// <param name="getData">Function that retrieves the data </param>
-        /// <returns>returns the object or null if it doesn't exists</returns>
-        T GetOrAdd<T>(string key, Func<T> getData);
+        /// <param name="value">value that set to cache manager</param>
+        /// <returns>returns the object that is cached</returns>
+        T GetOrSet<T>(string key, object value);
 
         IEnumerable<string> Keys();
 

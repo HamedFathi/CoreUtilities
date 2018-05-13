@@ -20,7 +20,18 @@ namespace CoreUtilities
 
         public T Get<T>(string key) => cache.ContainsKey(key) ? (T)cache[key] : default(T);
 
-        public T GetOrAdd<T>(string key, Func<T> getData) => (T)cache.GetOrAdd(key, x => getData());
+        public T GetOrSet<T>(string key, object value)
+        {
+            if (cache.ContainsKey(key))
+            {
+                return Get<T>(key);
+            }
+            else
+            {
+                Set(key, value);
+                return (T)value;
+            }
+        }
 
         public IEnumerable<string> Keys() => cache.Keys;
 
@@ -56,5 +67,25 @@ namespace CoreUtilities
         }
 
         public IEnumerable<object> Values() => cache.Values;
+
+        public Dictionary<string, object> CacheData()
+        {
+            var dic = new Dictionary<string, object>();
+            foreach (var item in cache)
+            {
+                dic.Add(item.Key, item.Value);
+            }
+            return dic;
+        }
+
+        public Dictionary<string, T> CacheData<T>()
+        {
+            var dic = new Dictionary<string, T>();
+            foreach (var item in cache)
+            {
+                dic.Add(item.Key, (T)item.Value);
+            }
+            return dic;
+        }
     }
 }
