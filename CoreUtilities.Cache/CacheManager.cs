@@ -19,6 +19,8 @@ namespace CoreUtilities
         public int Count() => cache.Count;
 
         public T Get<T>(string key) => cache.ContainsKey(key) ? (T)cache[key] : default(T);
+        
+        public object Get(string key) => cache.ContainsKey(key) ? cache[key] : default(object);
 
         public T GetOrSet<T>(string key, object value)
         {
