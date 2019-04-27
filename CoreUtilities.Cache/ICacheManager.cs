@@ -27,6 +27,13 @@ namespace CoreUtilities
         T Get<T>(string key);
 
         /// <summary>
+        /// Get the object that its key is given
+        /// </summary>
+        /// <param name="key">The given key to check</param>
+        /// <returns>returns the object or null if it doesn't exists</returns>
+        object Get(string key);
+
+        /// <summary>
         /// Get the object that its key is given or set a new object if the key does not exist
         /// </summary>
         /// <typeparam name="T">The object</typeparam>
